@@ -28,11 +28,9 @@ mmcorpus = gensim.corpora.MmCorpus('test.mm')
 
 
 model = gensim.models.TfidfModel(mmcorpus)
-<<<<<<< Updated upstream
-=======
+
 #model = gensim.models.LsiModel(mmcorpus)
 index = gensim.similarities.MatrixSimilarity(mmcorpus)
->>>>>>> Stashed changes
 
 index = gensim.similarities.MatrixSimilarity(mmcorpus)
 print(index)
