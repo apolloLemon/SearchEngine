@@ -58,6 +58,4 @@ ranking = sorted(enumerate(similarities), key=itemgetter(1), reverse=True)
 
 
 for c, s in ranking[:10]:
-    
-
-print("[ Score = %.3f" %s +" ] " + doc_list[c].find('docno').text)
+    print("[ Score = %.3f" %s +" ] " + doc_list[c].find('docno').text)
