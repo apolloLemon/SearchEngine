@@ -20,17 +20,21 @@ pC = [ProcessDocument(c) for c in C]
 dictionary = gensim.corpora.Dictionary(pC)
 dictionary.save('test.dict')
 
+
 vectors = [dictionary.doc2bow(pc) for pc in pC]
 gensim.corpora.MmCorpus.serialize('test.mm', vectors)
 mmcorpus = gensim.corpora.MmCorpus('test.mm')
 
-model = gensim.models.TfidfModel(mmcorpus)
-index = gensim.similarities.MatrixSimilarity(mmcorpus)
 
+model = gensim.models.TfidfModel(mmcorpus)
+
+index = gensim.similarities.MatrixSimilarity(mmcorpus)
+print(index)
 
 Q = "I'm looking for dictionaries"
 pQ = ProcessDocument(Q)
 vQ = dictionary.doc2bow(pQ)
+print(vQ)
 wQ = model[vQ]
 similarities = index[wQ]
 ranking = sorted(enumerate(similarities), key=itemgetter(1), reverse=True)
