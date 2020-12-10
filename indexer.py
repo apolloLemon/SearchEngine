@@ -2,6 +2,7 @@ import gensim
 from bs4 import BeautifulSoup
 import os
 import docproc
+import numpy as np
 
 doc_list=[]
 for filename in os.listdir(os.getcwd()+"/corpus"):
@@ -9,15 +10,15 @@ for filename in os.listdir(os.getcwd()+"/corpus"):
     soup = BeautifulSoup(F,'html.parser')
     for doc in soup('doc'):
         doc_list.append(doc)
-    
+nplist = np.array(doc_list)
+np.save('doclist.npy', nplist)
 
 pC = []
-
 for doc in doc_list :
     document_texts = ""
     for text in doc.find_all('text'):
         document_texts += text.text
-    pC.append(ProcessDocument(document_texts))
+    pC.append(docproc.ProcessDocument(document_texts))
 
     
 
