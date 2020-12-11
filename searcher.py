@@ -13,8 +13,8 @@ for filename in os.listdir(os.getcwd()+"/corpus"):
         doc_list.append(doc)
 
 print("load dict")
-dictionary = gensim.corpora.Dictionary()
-dictionary.load('corpus.dict')
+dictionary = gensim.corpora.Dictionary().load('corpus.dict')
+#dictionary.load('corpus.dict')
 
 mmcorpus = gensim.corpora.MmCorpus('corpus.mm')
 
