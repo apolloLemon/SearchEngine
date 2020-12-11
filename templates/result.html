@@ -2,18 +2,30 @@
   
 <html> 
 <head> 
-    <title>Resultats de la recherche</title> 
+    <title>Resultats de la recherche</title>
+    <link rel="stylesheet" href="static/background/background.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/background/background.js"></script>
 </head> 
 <body> 
-  
+<canvas id="nokey"></canvas>
+
+<h1> Resultats de la recherche : {{query}}</h1>
+
 <ol> 
 
 {%for i in range(0, len)%} 
   
-    <li onclick="">{{results[i].head.text}}</li> 
+    <li>
+  			<h2>{{results[i].head.text}}</h2>
+  			<h3>{{results[i].fileid.text}}</h3>
+  			<p>
+  			{{texts[i]}}
+  			</p>
+    </li> 
 {%endfor%} 
-  
 </ol> 
+<script>console.log( {{results[i]}} )</script>
   
 </body> 
 </html> 

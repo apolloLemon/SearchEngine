@@ -24,8 +24,8 @@ def search():
     
     if request.method == "POST":
         query = request.form.get('query')
-        result = searcher.searchDoc(query)
-        return render_template("result.html", len = len(result), results = result) 
+        result, texts = searcher.searchDoc(query)
+        return render_template("result.html", len = len(result), results = result, texts = texts, query = query) 
 
 
 if __name__ == '__main__':

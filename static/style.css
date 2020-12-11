@@ -1,0 +1,36 @@
+html {
+	color:white;
+	padding: auto;
+}
+
+h1 {
+	color:purple;
+}
+
+ol{
+	height: 85%;
+	overflow-y: scroll;
+}
+
+li {
+	background-color: rgba(0,0,0,0.6);
+}
+
+#form {
+	text-align: center;
+	margin: auto;
+	margin-top: 25%;
+	width: 50%;
+}
+
+#bar, #but {
+	color: purple;
+}
+
+#bar {
+	width: 80%;
+}
+
+#but {
+	width: 19%;
+}

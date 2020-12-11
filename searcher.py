@@ -35,7 +35,9 @@ def searchDoc(query):
   similarities = index[wQ]
   ranking = sorted(enumerate(similarities), key=itemgetter(1), reverse=True)
   result = []
+  texts = []
   for c, s in ranking[:10]:
       result.append(doc_list[c])
+      texts.append(doc_list[c].find('text').text)
       print("[ Score = %.3f" %s +" ] " + doc_list[c].find('docno').text)
-  return result
+  return result, texts

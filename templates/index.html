@@ -2,18 +2,22 @@
 <html >
 <head>
 <title>Moteur de recherche</title>
+<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="static/background/background.css">
+<script src="static/background/background.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 </head>
 
 <body>
+<canvas id="nokey"></canvas>
 
-<div>
-
-  <form action="/search" method="post"> <br>
-    <input type="text" name="query" value=""><br> <br>
-    <input type="submit" value="rechercher">
+<div id="form">
+	<h1>Dhya & Maths' Search Engine</h1>
+  <form action="/search" method="post">
+    <input id="bar"  type="text" name="query" value="">
+    <input id="but" type="submit" value="rechercher">
   </form>
 </div>
 </div>
