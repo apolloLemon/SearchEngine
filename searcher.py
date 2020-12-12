@@ -8,7 +8,9 @@ def searchDoc(query):
  
   print("loading files")
   doc_list=[]
-  for filename in os.listdir(os.getcwd()+"/corpus"):
+  listdir = os.listdir(os.getcwd()+"/corpus")
+  listdir.sort()
+  for filename in listdir:
     with open(os.getcwd()+"/corpus/"+filename, 'r') as F:
       soup = BeautifulSoup(F,'html.parser')
       for doc in soup('doc'):

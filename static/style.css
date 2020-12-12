@@ -7,6 +7,12 @@ h1 {
 	color:purple;
 }
 
+hr {
+	height: 1px;
+	border:none;
+	background-color: purple;
+}
+
 ol{
 	height: 85%;
 	overflow-y: scroll;
